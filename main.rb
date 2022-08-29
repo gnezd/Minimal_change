@@ -48,7 +48,7 @@ $rules.row_vectors.each_with_index do |rule, i|
 end
 puts "Start bruteforcing at #{Time.now}"
 puts '-' * 25
-till = 600
+till = 300
 results = []
 (1..till).each do |i|
     results.push brute_decompose(Vector[i, 0, 0, 0, 0])

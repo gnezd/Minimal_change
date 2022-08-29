@@ -32,23 +32,32 @@ def brute_decompose(vector)
         end
     end
     puts "#{vector} - Performs #{best} to get #{best + vector} with #{sum_coins(best + vector)} coins."
+    best
 end
 
 $rules = Matrix[
     Vector[-5, 1, 0, 0, 0],
     Vector[0, -2, 1, 0, 0],
     Vector[-2, 0, -1, 1, 0],
-    Vector[-2, 0, 0, -4, 1]
+    Vector[0, 0, -5, 0, 1]
 ]
 
 puts "Validating rules:"
 $rules.row_vectors.each_with_index do |rule, i|
     puts "rule #{i}: #{rule.inspect} - delta value: #{sum_value(rule)}, delta # of coins: #{sum_coins(rule)}"
 end
+puts "Start bruteforcing at #{Time.now}"
 puts '-' * 25
-(1..100).each do |i|
-    brute_decompose(Vector[i, 0, 0, 0, 0])
+till = 600
+results = []
+(1..till).each do |i|
+    results.push brute_decompose(Vector[i, 0, 0, 0, 0])
 end
+
+puts "Bruteforcing finished at #{Time.now}"
+fout = File.open 'Answer', 'w'
+fout.puts results
+fout.close
 
 =begin
 # 嘗試拆解之

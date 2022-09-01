@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[122]:
-
-
 def get_coin_count(exchange):
     min_coin_count = [0 for i in range(exchange+1)]
     min_coin_count[0] = 0
@@ -56,13 +50,7 @@ def get_coin_count(exchange):
             
 
 
-# In[123]:
-
-
 get_coin_count(30)
-
-
-# In[ ]:
 
 
 

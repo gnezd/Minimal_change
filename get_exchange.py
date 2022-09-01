@@ -1,4 +1,3 @@
-def get_coin_count(exchange):
 import sys
 
 def get_coin_count(exchange):
